@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-18.04"
 
-  config.vm.network :forwarded_port, guest: 50600, host: 8080
+  config.vm.network :forwarded_port, guest: 50100, host: 50600
 
   config.vm.synced_folder ".", "/home/vagrant/yotei"
 
@@ -15,5 +15,8 @@ Vagrant.configure("2") do |config|
     sudo chown root:root /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
   SHELL
+  config.vm.provision "shell",
+    inline: "docker-compose -f /home/vagrant/yotei/docker-compose.yml up -d",
+    run: "always"
 end
 

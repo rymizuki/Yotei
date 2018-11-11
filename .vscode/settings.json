@@ -1,7 +1,21 @@
 {
     "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+      {
+        "language": "vue",
+        "autoFix": true
+      },
+      {
+        "language": "html",
+        "autoFix": true
+      },
+      {
+        "language": "javascript",
+        "autoFix": true
+      }
+    ],
     "eslint.nodePath": "./client/node_modules/",
     "eslint.options": {
       "configFile": "./client/.eslintrc.js"
-    }
+    },
 }

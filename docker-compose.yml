@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - 50100:3000
+    volumes:
+      - ./client:/usr/local/docker/app
+    environment:
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+    command: ["npm", "run", "dev"]
+    stdin_open: true
+    tty: true

@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.network :forwarded_port, guest: 50100, host: 50600
 
-  config.vm.synced_folder ".", "/home/vagrant/yotei"
+  config.vm.synced_folder ".", "/home/vagrant/"
 
   config.vm.provision "docker"
   config.vm.provision "shell", inline: <<-SHELL
